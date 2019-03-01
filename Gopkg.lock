@@ -20,6 +20,12 @@
   version = "v1.4.7"
 
 [[projects]]
+  name = "github.com/ghodss/yaml"
+  packages = ["."]
+  revision = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7"
+  version = "v1.0.0"
+
+[[projects]]
   name = "github.com/hashicorp/hcl"
   packages = [
     ".",
@@ -35,6 +41,18 @@
   ]
   revision = "8cb6e5b959231cc1119e43259c4a608f9c51a241"
   version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/jaypipes/ghw"
+  packages = ["."]
+  revision = "032dfb1f8cb2b9b5c0e894855833e23ff1fe24a9"
+  version = "0.3"
+
+[[projects]]
+  name = "github.com/jaypipes/pcidb"
+  packages = ["."]
+  revision = "141a53e65d4ad43fdbd2760c714344da88f24adb"
+  version = "0.3"
 
 [[projects]]
   branch = "master"
@@ -77,6 +95,12 @@
   packages = ["."]
   revision = "c01d1270ff3e442a8a57cddc1c92dc1138598194"
   version = "v1.2.0"
+
+[[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
 
 [[projects]]
   name = "github.com/pmezard/go-difflib"
@@ -167,9 +191,15 @@
   revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
   version = "v2.2.2"
 
+[[projects]]
+  name = "howett.net/plist"
+  packages = ["."]
+  revision = "591f970eefbbeb04d7b37f334a0c4c3256e32876"
+  source = "github.com/DHowett/go-plist"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5b9a6a4f4b98cc6eefa87e82577086383091732c5e19033257aa858427496681"
+  inputs-digest = "bbb6aa8f7569c7dd7ef1d2650ef8b37b813c4612a1fefb814f7b82fbf5d24968"
   solver-name = "gps-cdcl"
   solver-version = 1

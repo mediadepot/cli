@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/fatih/color"
+	"github.com/mediadepot/cli/pkg/actions"
 	"gopkg.in/urfave/cli.v2"
 )
 
@@ -76,28 +77,10 @@ OPTIONS:
 				Action: func(c *cli.Context) error {
 					fmt.Fprintln(c.App.Writer, c.Command.Usage)
 
-					projectList, err := project.CreateProjectListFromProvidedAnswers(config)
-					if err != nil {
-						return err
-					}
 
-					answerData := map[string]interface{}{}
-					if projectList.Length() > 0 && utils.StdinQueryBoolean(fmt.Sprintf("Would you like to create a Drawbridge config using preconfigured answers? (%v available). [yes/no]", projectList.Length())) {
-
-						answerData, err = projectList.Prompt("Enter number to base your configuration from")
-						if err != nil {
-							return err
-						}
-					}
-
-					//extend current answerData with CLI provided options.
-					cliAnswers, err := createFlagHandler(config, answerData, c.FlagNames(), c)
-					if err != nil {
-						return err
-					}
-
-					createAction := actions.CreateAction{Config: config}
-					return createAction.Start(cliAnswers, c.Bool("dryrun"))
+					createAction := actions.InstallAction{}
+					data := map[string]interface{}
+					return createAction.Start(data, c.Bool("dryrun"))
 				},
 
 				Flags: createFlags,

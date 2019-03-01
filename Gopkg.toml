@@ -10,6 +10,8 @@
     "github.com/fatih/color",
     "github.com/kvz/logstreamer",
  	"gopkg.in/yaml.v2",
+ 	"github.com/jaypipes/ghw",
+ 	"github.com/manifoldco/promptui",
 
     # test dependencies
     "github.com/stretchr/testify/require",
