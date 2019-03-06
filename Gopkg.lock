@@ -2,6 +2,39 @@
 
 
 [[projects]]
+  name = "github.com/alecthomas/gometalinter"
+  packages = ["."]
+  revision = "df395bfa67c5d0630d936c0044cf07ff05086655"
+  version = "v3.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/alecthomas/units"
+  packages = ["."]
+  revision = "2efee857e7cfd4f3d0138cc3cbb1b4966962b93a"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/analogj/go-util"
+  packages = ["utils"]
+  revision = "5295e364eb144aa8e5af346f41d5d0fc1bdecbf5"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/chzyer/readline"
+  packages = ["."]
+  revision = "2972be24d48e78746da79ba8e24e8b488c9880de"
+
+[[projects]]
+  name = "github.com/client9/misspell"
+  packages = [
+    ".",
+    "cmd/misspell"
+  ]
+  revision = "b90dc15cfd220ecf8bbc9043ecb928cef381f011"
+  version = "v0.3.4"
+
+[[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
@@ -24,6 +57,27 @@
   packages = ["."]
   revision = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7"
   version = "v1.0.0"
+
+[[projects]]
+  branch = "travis-1.9"
+  name = "github.com/golang/lint"
+  packages = [
+    ".",
+    "golint"
+  ]
+  revision = "883fe33ffc4344bad1ecd881f61afd5ec5d80e0a"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/google/shlex"
+  packages = ["."]
+  revision = "c34317bd91bf98fab745d77b03933cf8769299fe"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gordonklaus/ineffassign"
+  packages = ["."]
+  revision = "1003c8bd00dc2869cb5ca5282e6ce33834fed514"
 
 [[projects]]
   name = "github.com/hashicorp/hcl"
@@ -56,15 +110,40 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/juju/ansiterm"
+  packages = [
+    ".",
+    "tabwriter"
+  ]
+  revision = "720a0952cc2ac777afc295d9861263e2a4cf96a1"
+
+[[projects]]
+  branch = "master"
   name = "github.com/kvz/logstreamer"
   packages = ["."]
   revision = "a635b98146f0f465f3413a0b8ec481f3698d3fc2"
+
+[[projects]]
+  name = "github.com/lunixbochs/vtclean"
+  packages = ["."]
+  revision = "88cfb0c2efe8ed7b0ccf0af83db39359829027bb"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/magiconair/properties"
   packages = ["."]
   revision = "c2353362d570a7bfa228149c62842019201cfb71"
   version = "v1.8.0"
+
+[[projects]]
+  name = "github.com/manifoldco/promptui"
+  packages = [
+    ".",
+    "list",
+    "screenbuf"
+  ]
+  revision = "20f2a94120aa14a334121a6de66616a7fa89a5cd"
+  version = "v0.3.2"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -89,6 +168,17 @@
   packages = ["."]
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
   version = "v1.1.2"
+
+[[projects]]
+  name = "github.com/nicksnyder/go-i18n"
+  packages = [
+    "i18n",
+    "i18n/bundle",
+    "i18n/language",
+    "i18n/translation"
+  ]
+  revision = "0dc1626d56435e9d605a29875701721c54bc9bbd"
+  version = "v1.10.0"
 
 [[projects]]
   name = "github.com/pelletier/go-toml"
@@ -162,8 +252,23 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/tsenart/deadcode"
+  packages = ["."]
+  revision = "210d2dc333e90c7e3eedf4f2242507a8e83ed4ab"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  revision = "8dd112bcdc25174059e45e07517d9fc663123347"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows"
+  ]
   revision = "a34e9553db1e492c9a76e60db2296ae7e5fbb772"
 
 [[projects]]
@@ -178,6 +283,23 @@
   ]
   revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
   version = "v0.3.0"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/tools"
+  packages = [
+    "go/ast/astutil",
+    "go/gcexportdata",
+    "go/internal/gcimporter",
+    "go/types/typeutil"
+  ]
+  revision = "589c23e65e65055d47b9ad4a99723bc389136265"
+
+[[projects]]
+  branch = "v3-unstable"
+  name = "gopkg.in/alecthomas/kingpin.v3-unstable"
+  packages = ["."]
+  revision = "df19058c872cddcd279411d709047160e543a700"
 
 [[projects]]
   branch = "v2"
@@ -200,6 +322,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bbb6aa8f7569c7dd7ef1d2650ef8b37b813c4612a1fefb814f7b82fbf5d24968"
+  inputs-digest = "5314b9d216a11afaef65d2e4391bef4f743a27b9cd6768a3a384fcb04661ed5d"
   solver-name = "gps-cdcl"
   solver-version = 1

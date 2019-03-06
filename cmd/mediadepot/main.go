@@ -8,7 +8,11 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/mediadepot/cli/pkg/actions"
+	"github.com/mediadepot/cli/pkg/version"
 	"gopkg.in/urfave/cli.v2"
+
+	"github.com/analogj/go-util/utils"
+
 )
 
 var goos string
@@ -16,11 +20,11 @@ var goarch string
 
 func main() {
 
-	config, err := config.Create()
-	if err != nil {
-		fmt.Printf("FATAL: %+v\n", err)
-		os.Exit(1)
-	}
+	//config, err := config.Create()
+	//if err != nil {
+	//	fmt.Printf("FATAL: %+v\n", err)
+	//	os.Exit(1)
+	//}
 
 	////we're going to load the config file manually, since we need to validate it.
 	//err = config.ReadConfig("/etc/mediadepot.yaml")          // Find and read the config file
@@ -77,18 +81,32 @@ OPTIONS:
 				Action: func(c *cli.Context) error {
 					fmt.Fprintln(c.App.Writer, c.Command.Usage)
 
+					installAction := actions.InstallAction{}
 
-					createAction := actions.InstallAction{}
-					data := map[string]interface{}
-					return createAction.Start(data, c.Bool("dryrun"))
+					//verify filesystem formatter & coreos installer
+					_, err := installAction.Validate()
+
+					if err != nil {
+						return err
+					}
+
+					// Get disks
+					installAction.QueryBootDisk()
+					installAction.QueryStorageDisks()
+
+					return nil
+
+
+					//data := map[string]interface{}
+					//return installAction.Start(data, c.Bool("dryrun"))
 				},
 
-				Flags: createFlags,
+				//Flags: createFlags,
 			},
 		},
 	}
 
-	err = app.Run(os.Args)
+	err := app.Run(os.Args)
 	if err != nil {
 		log.Fatal(color.HiRedString("ERROR: %v", err))
 	}
@@ -109,10 +127,10 @@ func CustomizeHelpTemplate() string {
 
 	return fmt.Sprintf(utils.StripIndent(
 		`
-		 ____  ____  __ _  ____  __    ___  __    ____
-		(_  _)(  __)(  ( \(_  _)/ _\  / __)(  )  (  __)
-		  )(   ) _) /    /  )( /    \( (__ / (_/\ ) _)
-		 (__) (____)\_)__) (__)\_/\_/ \___)\____/(____)
+		 __  __  ___  ___  __   __   ___  ___  ___   __  ____ 
+		(  \/  )(  _)(   \(  ) (  ) (   \(  _)(  ,\ /  \(_  _)
+		 )    (  ) _) ) ) ))(  /__\  ) ) )) _) ) _/( () ) )(  
+		(_/\/\_)(___)(___/(__)(_)(_)(___/(___)(_)   \__/ (__) 
 		%s
 	
 		`), subtitle)

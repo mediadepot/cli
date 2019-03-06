@@ -12,6 +12,7 @@
  	"gopkg.in/yaml.v2",
  	"github.com/jaypipes/ghw",
  	"github.com/manifoldco/promptui",
+ 	"github.com/analogj/go-util/utils",
 
     # test dependencies
     "github.com/stretchr/testify/require",
